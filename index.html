@@ -1,56 +1,194 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
-	<title>Ablakok</title>
-	<meta charset="UTF-8">
-	<style>
-		/* Ablakok stílusa */
-		.window {
-			width: 300px;
-			height: 200px;
-			border: 1px solid black;
-			padding: 10px;
+
+	<title>4 ablak</title>	<style>
+
+		/* modális ablak stílusa */
+
+		.modal {
+
 			display: none;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+
+			position: fixed;
+
+			z-index: 1;
+
+			left: 0;
+
+			top: 0;
+
+			width: 100%;
+
+			height: 100%;
+
+			overflow: auto;
+
+			background-color: rgba(0,0,0,0.5);
+
 		}
+
+		/* modális ablak tartalma */
+
+		.modal-content {
+
+			background-color: #fefefe;
+
+			margin: 10% auto;
+
+			padding: 20px;
+
+			border: 1px solid #888;
+
+			width: 80%;
+
+		}
+
+		/* modális ablak bezárása */
+
+		.close {
+
+			color: #aaa;
+
+			float: right;
+
+			font-size: 28px;
+
+			font-weight: bold;
+
+		}
+
+		.close:hover,
+
+		.close:focus {
+
+			color: black;
+
+			text-decoration: none;
+
+			cursor: pointer;
+
+		}
+
 	</style>
+
 </head>
+
 <body>
-	<h1>Osztályok</h1>
+
+	<h1>4 ablak</h1>
+
 	<ul>
-		<li><a href="#" onclick="showWindow('tortenelem')">Történelem</a></li>
-		<li><a href="#" onclick="showWindow('nyelvtan')">Nyelvtan</a></li>
-		<li><a href="#" onclick="showWindow('matematika')">Matematika</a></li>
-		<li><a href="#" onclick="showWindow('irodalom')">Irodalom</a></li>
+
+		<li><a href="#" onclick="openModal('geschichte')">Geschichte</a></li>
+
+		<li><a href="#" onclick="openModal('kultur')">Kultur</a></li>
+
+		<li><a href="#" onclick="openModal('sprache')">Sprache</a></li>
+
+		<li><a href="#" onclick="openModal('land')">Land</a></li>
+
 	</ul>
 
-	<!-- Ablakok -->
-	<div id="tortenelem" class="window">
-		<h2>Történelem</h2>
-		<p>Ez a Történelem ablak.</p>
+	<!-- modális ablakok -->
+
+	<div id="geschichte-modal" class="modal">
+
+		<div class="modal-content">
+
+			<span class="close" onclick="closeModal('geschichte')">&times;</span>
+
+			<h2>Geschichte</h2>
+
+			<p>Deutschland Geschichte ...</p>
+
+		</div>
+
 	</div>
-	<div id="nyelvtan" class="window">
-		<h2>Nyelvtan</h2>
-		<p>Ez a Nyelvtan ablak.</p>
+
+	<div id="kultur-modal" class="modal">
+
+		<div class="modal-content">
+
+			<span class="close" onclick="closeModal('kultur')">&times;</span>
+
+			<h2>Kultur</h2>
+
+			<p>Deutschland Kultur ...</p>
+
+		</div>
+
 	</div>
-	<div id="matematika" class="window">
-		<h2>Matematika</h2>
-		<p>Ez a Matematika ablak.</p>
+
+	<div id="sprache-modal" class="modal">
+
+		<div class="modal-content">
+
+			<span class="close" onclick="closeModal('sprache')">&times;</span>
+
+			<h2>Sprache</h2>
+
+			<p>Deutschland Sprache ...</p>
+
+		</div>
+
 	</div>
-	<div id="irodalom" class="window">
-		<h2>Irodalom</h2>
-		<p>Ez az Irodalom ablak.</p>
+
+	<div id="land-modal" class="modal">
+
+		<div class="modal-content">
+
+			<span class="close" onclick="closeModal('land')">&times;</span>
+
+			<h2>Land</h2>
+
+			<p>Deutschland Land ...</p>
+
+		</div>
+
 	</div>
 
 	<script>
-		// Ablak megjelenítése
-		function showWindow(id) {
-			var window = document.getElementById(id);
-			window.style.display = "block";
+
+		// modális ablak megjelenítése
+
+		function openModal(id) {
+
+			document.getElementById(id + "-modal").style.display = "block";
+
 		}
-	</script>
+
+		// modális ablak elrejtése
+
+		function closeModal(id) {
+
+			document.getElementById(id + "-modal").style.display = "none";
+
+		}
+
+</script>
+
 </body>
+
 </html>
+
+```
+	
+		
+		
+			
+			
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
