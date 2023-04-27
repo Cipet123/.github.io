@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ablakok</title>
+	<meta charset="UTF-8">
+	<style>
+		/* Ablakok stílusa */
+		.window {
+			width: 300px;
+			height: 200px;
+			border: 1px solid black;
+			padding: 10px;
+			display: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+<body>
+	<h1>Osztályok</h1>
+	<ul>
+		<li><a href="#" onclick="showWindow('tortenelem')">Történelem</a></li>
+		<li><a href="#" onclick="showWindow('nyelvtan')">Nyelvtan</a></li>
+		<li><a href="#" onclick="showWindow('matematika')">Matematika</a></li>
+		<li><a href="#" onclick="showWindow('irodalom')">Irodalom</a></li>
+	</ul>
+
+	<!-- Ablakok -->
+	<div id="tortenelem" class="window">
+		<h2>Történelem</h2>
+		<p>Ez a Történelem ablak.</p>
+	</div>
+	<div id="nyelvtan" class="window">
+		<h2>Nyelvtan</h2>
+		<p>Ez a Nyelvtan ablak.</p>
+	</div>
+	<div id="matematika" class="window">
+		<h2>Matematika</h2>
+		<p>Ez a Matematika ablak.</p>
+	</div>
+	<div id="irodalom" class="window">
+		<h2>Irodalom</h2>
+		<p>Ez az Irodalom ablak.</p>
+	</div>
+
+	<script>
+		// Ablak megjelenítése
+		function showWindow(id) {
+			var window = document.getElementById(id);
+			window.style.display = "block";
+		}
+	</script>
+</body>
+</html>
